@@ -16,7 +16,7 @@ layout: layouts/base.njk
     <li class="category-toggle">
       <button class="toggle-btn" onclick="toggleCategories()">
         <span class="toggle-text">Más categorías</span>
-        <span class="toggle-icon">⌄</span>
+        <span class="toggle-icon">▼</span>
       </button>
     </li>
   </ul>
@@ -183,10 +183,12 @@ layout: layouts/base.njk
     
     if (isExpanded) {
       toggleText.textContent = 'Más categorías';
-      toggleIcon.textContent = '⌄';
+      toggleIcon.textContent = '▼';
+      toggleBtn.classList.remove('expanded');
     } else {
       toggleText.textContent = 'Mostrar menos';
-      toggleIcon.textContent = '⌃';
+      toggleIcon.textContent = '▲';
+      toggleBtn.classList.add('expanded');
     }
   }
 </script>
