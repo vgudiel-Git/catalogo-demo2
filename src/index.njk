@@ -183,11 +183,11 @@ layout: layouts/base.njk
     
     if (isExpanded) {
       toggleText.textContent = 'Más categorías';
-      toggleIcon.textContent = '▾';
+      toggleIcon.textContent = '▼';
       toggleBtn.classList.remove('expanded');
     } else {
       toggleText.textContent = 'Mostrar menos';
-      toggleIcon.textContent = '▴';
+      toggleIcon.textContent = '▲';
       toggleBtn.classList.add('expanded');
     }
   }
