@@ -175,7 +175,7 @@ layout: layouts/base.njk
     const toggleText = document.querySelector('.toggle-text');
     const toggleIcon = document.querySelector('.toggle-icon');
     
-    const isExpanded = hiddenItems[0].style.display !== 'none';
+    const isExpanded = hiddenItems[0].style.display === 'block' || (hiddenItems[0].style.display === '' && window.getComputedStyle(hiddenItems[0]).display !== 'none');
     
     hiddenItems.forEach(item => {
       item.style.display = isExpanded ? 'none' : 'block';
@@ -183,11 +183,11 @@ layout: layouts/base.njk
     
     if (isExpanded) {
       toggleText.textContent = 'Más categorías';
-      toggleIcon.textContent = '▼';
+      toggleIcon.textContent = '▾';
       toggleBtn.classList.remove('expanded');
     } else {
       toggleText.textContent = 'Mostrar menos';
-      toggleIcon.textContent = '▲';
+      toggleIcon.textContent = '▴';
       toggleBtn.classList.add('expanded');
     }
   }
