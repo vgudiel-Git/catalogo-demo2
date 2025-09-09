@@ -7,8 +7,18 @@ layout: layouts/base.njk
   <ul class="category-nav">
     <li><a href="#todos" class="active">Todos los Productos</a></li>
     {% for category in categories %}
-      <li><a href="#{{ category.value }}">{{ category.label }}</a></li>
+      {% if loop.index <= 4 %}
+        <li class="category-item-visible"><a href="#{{ category.value }}">{{ category.label }}</a></li>
+      {% else %}
+        <li class="category-item-hidden"><a href="#{{ category.value }}">{{ category.label }}</a></li>
+      {% endif %}
     {% endfor %}
+    <li class="category-toggle">
+      <button class="toggle-btn" onclick="toggleCategories()">
+        <span class="toggle-text">Más categorías</span>
+        <span class="toggle-icon">⌄</span>
+      </button>
+    </li>
   </ul>
 </div>
 
@@ -157,4 +167,26 @@ layout: layouts/base.njk
       }
     }
   });
+  
+  // Función para alternar categorías en móvil
+  function toggleCategories() {
+    const hiddenItems = document.querySelectorAll('.category-item-hidden');
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const toggleText = document.querySelector('.toggle-text');
+    const toggleIcon = document.querySelector('.toggle-icon');
+    
+    const isExpanded = hiddenItems[0].style.display !== 'none';
+    
+    hiddenItems.forEach(item => {
+      item.style.display = isExpanded ? 'none' : 'block';
+    });
+    
+    if (isExpanded) {
+      toggleText.textContent = 'Más categorías';
+      toggleIcon.textContent = '⌄';
+    } else {
+      toggleText.textContent = 'Mostrar menos';
+      toggleIcon.textContent = '⌃';
+    }
+  }
 </script>
