@@ -811,6 +811,7 @@ footer {
   font-size: 14px;
   margin-bottom: 3rem;
   text-align: left;
+  font-weight: 500;
 }
 
 .product-detail__cta-container {
@@ -867,6 +868,7 @@ footer {
     font-size: 14px;
     line-height: 20px;
     text-align: left;
+    font-weight: 500;
   }
 
   .product-detail__cta-container {
