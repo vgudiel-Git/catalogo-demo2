@@ -810,7 +810,7 @@ footer {
   line-height: 20px;
   font-size: 14px;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 .product-detail__cta-container {
@@ -855,7 +855,8 @@ footer {
   }
   
   .product-detail__title {
-    font-size: 2rem;
+    font-size: 24px;
+    line-height: 32px;
   }
   
   .product-detail__price {
@@ -863,7 +864,9 @@ footer {
   }
   
   .product-detail__content {
-    font-size: 1rem;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
   }
 
   .product-detail__cta-container {
