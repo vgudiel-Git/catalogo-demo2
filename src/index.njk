@@ -39,6 +39,9 @@ layout: layouts/base.njk
             {% endif %}
           {% endif %}
           <h3>{{ product.data.title }}</h3>
+          {% if product.templateContent %}
+            <div class="description">{{ product.templateContent | striptags | truncate(150) }}</div>
+          {% endif %}
           {% set discountPrice = product.data.price | calculateDiscountPrice(product.data.discount, product.data.discountPrice) %}
           {% if discountPrice %}
             <div class="price-container">
@@ -88,6 +91,9 @@ layout: layouts/base.njk
                 {% endif %}
               {% endif %}
               <h3>{{ product.data.title }}</h3>
+              {% if product.templateContent %}
+                <div class="description">{{ product.templateContent | striptags | truncate(150) }}</div>
+              {% endif %}
               {% set discountPrice = product.data.price | calculateDiscountPrice(product.data.discount, product.data.discountPrice) %}
               {% if discountPrice %}
                 <div class="price-container">
